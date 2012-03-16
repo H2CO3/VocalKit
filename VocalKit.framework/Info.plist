@@ -1,0 +1,13 @@
+<plist>
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>org.h2co3.vocalkit</string>
+	<key>CFBundleExecutable</key>
+	<string>VocalKit</string>
+	<key>CFBundleName</key>
+	<string>VocalKit</string>
+	<key>CFBundleVersion</key>
+	<string>0.1a</string>
+</dict>
+</plist>
+

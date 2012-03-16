@@ -1,0 +1,66 @@
+VocalKit
+--------
+(Original author: Brian King)
+
+
+VocalKit is an Objective-C wrapper around the pocketsphinx speech recognition library,
+along with an extensive American English language model to provide speech recognition
+features for iOS devices. This works not only on the iPhone 4S, but on all devices.
+
+How to use:
+-----------
+
+	#import <VocalKit/VocalKit.h>
+	
+	@interface MyDelegate: NSObject <VKManagerDelegate> {
+		VKManager *manager;
+	}
+	
+	@end
+	
+	
+	@implementation MyDelegate
+	
+	- (id) init
+	{
+		if ((self = [super init]))
+		{
+			manager = [[VKManager alloc] init];
+			manager.delegate = self;
+		}
+		
+		return self;
+	}
+	
+	// ...
+	// To start recording speech to be recognized:
+	// [manager startListening];
+	// ...
+	
+	// ...
+	// To stop recording and start processing/recognizing the text:
+	// [manager stopListening];
+	// ...
+	
+	- (void) vkManager:(VKManager *)mgr recognizedText:(NSString *)text
+	{
+		// Do whatever you want with "text"
+	}
+
+
+Notices:
+--------
+
+1. This is HUGE. The complete framework weighs about 20MB (God bless we haven't more
+often-used words in English!)
+2. Still in development. That is, not very precise, but it mostly works fine.
+3. Text-to-speech has been cut out from the original lib, as it can be implemented
+   using free online services (http://github.com/H2CO3/BingTranslate), and the text
+   to speech part is already 6MB. Way too large.
+
+License: CreativeCommons Attribution Share-Alike 3.0 Unported License
+
+Happy recognition! :-)
+
+--H2CO3
+
